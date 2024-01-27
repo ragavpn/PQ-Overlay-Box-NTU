@@ -1,0 +1,20 @@
+{
+  "name": "aserver",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Ayush Chadha <elegantShock3307@gmail.com>",
+  "keywords": [],
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "start": "./bin/app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "http-errors": "^2.0.0",
+    "pino": "^8.17.2",
+    "pino-http": "^9.0.0",
+    "pino-pretty": "^10.3.1"
+  }
+}
