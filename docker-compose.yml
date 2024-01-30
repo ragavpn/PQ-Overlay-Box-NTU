@@ -2,18 +2,34 @@ version: '3'
 
 services:
   quantum_container1:
-    build: ./quantum_container1
     volumes:
       - ./quantum_container1:/app
     networks:
       - quantum_network
-  
+    build:
+      context: quantum_container1
+      dockerfile: Dockerfile
+    command: 
+    - bash
+    - -c
+    - |
+      . venv/bin/activate
+      python3 /app/quantum_server.py
+
   quantum_container2:
-    build: ./quantum_container2
     volumes:
       - ./quantum_container2:/app
     networks:
       - quantum_network
+    build:
+      context: quantum_container2
+      dockerfile: Dockerfile
+    command: 
+    - bash
+    - -c
+    - |
+      . venv/bin/activate
+      python3 /app/quantum_client.py
 
   machine_a:
     build: ./machine_a
