@@ -1,6 +1,6 @@
-FROM python:3.9
+FROM python:3.8-slim-buster 
 
 WORKDIR /app
-COPY . .
+ADD . /app
 
 CMD ["python", "quantum_server.py"]

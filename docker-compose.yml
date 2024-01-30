@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  quantum_container1:
+    build: ./quantum_container1
+    volumes:
+      - ./quantum_container1:/app
+    networks:
+      - quantum_network
+  
+  quantum_container2:
+    build: ./quantum_container2
+    volumes:
+      - ./quantum_container2:/app
+    networks:
+      - quantum_network
+
+  machine_a:
+    build: ./machine_a
+    volumes:
+      - ./machine_a:/app
+    networks:
+      - quantum_network
+
+  machine_b:
+    build: ./machine_b
+    volumes:
+      - ./machine_b:/app
+    networks:
+      - quantum_network
+
+networks:
+  quantum_network:
+    driver: bridge

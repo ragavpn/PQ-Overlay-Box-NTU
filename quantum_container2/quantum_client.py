@@ -19,7 +19,7 @@ conn_q.close()
 
 # Setup socket for sending data to Machine B
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client_socket.connect(('172.18.0.5', 12347))  # Connect to Machine B using its IP address
+client_socket.connect(('machine_b', 12347))  # Connect to Machine B using its IP address
 client_socket.send(data)  # Send data to Machine B
 print(f"Data sent to Machine B: {data.decode()}")
 client_socket.close()
