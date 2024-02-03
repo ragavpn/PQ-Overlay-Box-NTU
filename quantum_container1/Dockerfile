@@ -1,4 +1,9 @@
+# quantum_container1/Dockerfile
+
 FROM ubuntu:latest
+
+# Install OpenSSL
+RUN apt-get update && apt-get install -y openssl
 
 # Install dependencies
 RUN apt-get -y update && \
